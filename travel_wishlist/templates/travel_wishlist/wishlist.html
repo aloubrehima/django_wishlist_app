@@ -5,7 +5,7 @@
 
 <form method="POST" action="{% url 'place_list' %}">
     {% csrf_token %}
-    {{ new_place_form }}
+    {{ new_place_form }}  # display the form for adding a new place
     <button id="add-new-place" type="submit">Add</button>
 </form>
 
@@ -23,9 +23,9 @@
 
 {% empty %}
 
-<p>You have no places in your wishlist.</p>
+<p>You have no places in your wishlist.</p>  # if empty, it will display thos message
 
 {% endfor %}
 
-{% endblock %}
+{% endblock %}   # end the content
 

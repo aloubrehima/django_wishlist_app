@@ -1,7 +1,7 @@
-<h2>About</h2>
+<h2>About</h2>  # Header 
 
 <div>
-    <p>{{ about }}</p>
+    <p>{{ about }}</p> 
 
     {% for letter in 'wishlist' %}
 
@@ -9,9 +9,9 @@
 
     {% endfor %}
 
-    <p>A website by {{ author }}</p>
+    <p>A website by {{ author }}</p>  # Display my name as I'm the author
 
-    {% if author %}
+    {% if author %}   # check if the variable exists
 
     <p>The author's name has been provided</p>
 
