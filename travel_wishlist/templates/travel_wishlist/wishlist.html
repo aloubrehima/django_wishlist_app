@@ -5,14 +5,16 @@
 
 <form method="POST" action="{% url 'place_list' %}">
     {% csrf_token %}
-    {{ new_place_form }}  # display the form for adding a new place
+    {{ new_place_form }}  
     <button id="add-new-place" type="submit">Add</button>
 </form>
 
 {% for place in places %}
 
 <div class="wishlist-place">
-    <span id="place-name-{{ place.pk }}" class="place-name">{{ place.name }}</span>
+    <span id="place-name-{{ place.pk }}" class="place-name">
+        <a href="{% url 'place_details' place.pk %}"> {{place.name }}</a>
+    </span>
 
     <form class="visited-form" method="POST" action="{% url 'place_was_visited' place.pk %}">
         {% csrf_token %}
